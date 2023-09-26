@@ -3,6 +3,11 @@ import { HiCalendar, HiMail, HiMinus, HiPlus, HiSearch } from "react-icons/hi";
 import { useState } from "react";
 import { useRef } from "react";
 import useOutsideClick from "../../hooks/useOutsideClick";
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css file
+import { DateRangePicker } from "react-date-range";
+import { DateRange } from "react-date-range";
+import { format } from "date-fns";
 
 function Header() {
   const [destination, setDestination] = useState("");
@@ -13,6 +18,14 @@ function Header() {
     room: 1,
   });
 
+  const [date, setDate] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
+  const [openDate, setOpenDate] = useState(false);
   const handleOptions = (name, operation) => {
     setOptions((prev) => {
       return {
@@ -39,7 +52,24 @@ function Header() {
         </div>
         <div className="headerSearchItem">
           <HiCalendar className="headerIcon dateIcon" />
-          <div className="dateDropDown">2023/6/24</div>
+          <div
+            className="dateDropDown"
+            onClick={() => setOpenDate((prev) => !prev)}
+          >
+            {`${format(date[0].startDate, "MM/dd/yyy")} to ${format(
+              date[0].endDate,
+              "MM/dd/yyy"
+            )} `}
+          </div>
+          {openDate && (
+            <DateRange
+              onChange={(item) => setDate([item.selection])}
+              ranges={date}
+              className="date"
+              minDate={new Date()}
+              moveRangeOnFirstSelection={true}
+            />
+          )}
           <span className="seperator"></span>
         </div>
         <div className="headerSearchItem">
