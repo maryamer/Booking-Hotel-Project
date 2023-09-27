@@ -20,7 +20,7 @@ function useFetch(url, query = "") {
     }
     fetchData();
   }, [url, query]);
-  return { isLoading, data };
+  return { data, isLoading };
 }
 
 export default useFetch;
