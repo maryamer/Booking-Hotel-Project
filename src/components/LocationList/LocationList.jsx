@@ -2,7 +2,6 @@ import useFetch from "../../hooks/useFetch";
 
 function LocationList() {
   const { data, isLoading } = useFetch("http://localhost:5000/hotels", "");
-  console.log(data);
   if (isLoading) <p>Loading...</p>;
   return (
     <div className="nearbyLocation">
