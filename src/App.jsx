@@ -2,13 +2,14 @@ import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import AppLayout from "./components/AppLayout/AppLayout";
+import HotelsProvider from "./components/context/HotelsProvider";
 import Header from "./components/Header/Header";
 import Hotels from "./components/Hotels/Hotels";
 import LocationList from "./components/LocationList/LocationList";
 
 function App() {
   return (
-    <div>
+    <HotelsProvider>
       <Toaster />
       <Header />
       <Routes>
@@ -19,7 +20,7 @@ function App() {
         </Route>
       </Routes>
       {/* <LocationList /> */}
-    </div>
+    </HotelsProvider>
   );
 }
 
