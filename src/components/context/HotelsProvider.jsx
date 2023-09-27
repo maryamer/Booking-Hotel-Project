@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { createContext } from "react";
 
 const HotelContext = createContext();
@@ -6,3 +7,7 @@ function HotelsProvider({ children }) {
 }
 
 export default HotelsProvider;
+
+export function useHotels() {
+  return useContext(HotelContext);
+}
