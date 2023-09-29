@@ -11,7 +11,7 @@ function BookmarkLayout() {
         <Outlet />
         <div>bookmark list</div>
       </div>
-      <Map markerLocations={[bookmarks]} />
+      <Map markerLocations={bookmarks} />
     </div>
   );
 }
