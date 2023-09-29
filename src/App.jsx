@@ -1,6 +1,7 @@
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import AddNewBookmark from "./components/AddNewBookmark/AddNewBookmark";
 import AppLayout from "./components/AppLayout/AppLayout";
 import Bookmark from "./components/Bookmark/Bookmark";
 import BookmarkLayout from "./components/BookmarkLayout/BookmarkLayout";
@@ -27,7 +28,7 @@ function App() {
           <Route path="/bookmark" element={<BookmarkLayout />}>
             <Route index element={<Bookmark />} />
             <Route path=":id" element={<SingleBookmark />} />
-            <Route path="add" element={<div> add new bookmark</div>} />
+            <Route path="add" element={<AddNewBookmark />} />
           </Route>
         </Routes>
         {/* <LocationList /> */}
