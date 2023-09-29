@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useEffect } from "react";
 import { useContext, createContext, useState } from "react";
 import { toast } from "react-hot-toast";
 import useFetch from "../../hooks/useFetch";
@@ -6,20 +7,48 @@ import useFetch from "../../hooks/useFetch";
 const BookmarkContext = createContext();
 const BASE_URL = "http://localhost:5000";
 function BookmarkListProvider({ children }) {
+  const [bookmarks, setBookmarks] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [isLoadingCurrentBookmark, setIsLoadingCurrentBookmark] =
     useState(false);
   const [currentBookmark, setCurrentBookmark] = useState();
+  // const { data: bookmarks, isLoading } = useFetch(`${BASE_URL}/bookmarks`);
 
-  const { data: bookmarks, isLoading } = useFetch(`${BASE_URL}/bookmarks`);
+  useEffect(() => {
+    async function fethBookmarkList() {
+      setIsLoading(true);
+      try {
+        const { data } = await axios.get(`${BASE_URL}/bookmarks`);
+        setBookmarks(data);
+        setIsLoading(false);
+      } catch (error) {
+        toast.error(error.message);
+        setIsLoading(false);
+      }
+    }
+    fethBookmarkList();
+  }, []);
   async function getBookmark(id) {
-    setIsLoadingCurrentBookmark(true);
+    setIsLoading(true);
     try {
       const { data } = await axios.get(`${BASE_URL}/bookmarks/${id}`);
       setCurrentBookmark(data);
-      setIsLoadingCurrentBookmark(false);
+      setIsLoading(false);
     } catch (error) {
       toast.error(error.message);
-      setIsLoadingCurrentBookmark(false);
+      setIsLoading(false);
+    }
+  }
+  async function createBookmark(newBookmark) {
+    setIsLoading(true);
+    try {
+      const { data } = await axios.post(`${BASE_URL}/bookmarks/`, newBookmark);
+      setCurrentBookmark(data);
+      setBookmarks((prev) => [...prev, newBookmark]);
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setIsLoading(false);
     }
   }
   return (
@@ -27,9 +56,10 @@ function BookmarkListProvider({ children }) {
       value={{
         bookmarks,
         isLoading,
-        isLoadingCurrentBookmark,
+        // isLoadingCurrentBookmark,
         getBookmark,
         currentBookmark,
+        createBookmark,
       }}
     >
       {children}

@@ -1368,6 +1368,69 @@
       "longitude": "67.78003711374224",
       "host_location": "Baba Kot Pakistan",
       "id": 8
+    },
+    {
+      "cityName": "Nima",
+      "country": "China",
+      "countryCode": "CN",
+      "latitude": "33.505617893674064",
+      "longitude": "102.03002929687501",
+      "host_location": "NimaChina",
+      "id": 9
+    },
+    {
+      "cityName": "Qom",
+      "country": "Iran (Islamic Republic of)",
+      "countryCode": "IR",
+      "latitude": "34.47373155509983",
+      "longitude": "51.39404296875001",
+      "host_location": "QomIran (Islamic Republic of)",
+      "id": 10
+    },
+    {
+      "cityName": "Ain Al-Tamur District",
+      "country": "Iraq",
+      "countryCode": "IQ",
+      "latitude": "32.29061543148475",
+      "longitude": "43.63769531250001",
+      "host_location": "Ain Al-Tamur DistrictIraq",
+      "id": 11
+    },
+    {
+      "cityName": "Ilgin",
+      "country": "Turkiye",
+      "countryCode": "TR",
+      "latitude": "38.46259496418217",
+      "longitude": "32.02514648437501",
+      "host_location": "IlginTurkiye",
+      "id": 12
+    },
+    {
+      "cityName": "Burdur",
+      "country": "Turkiye",
+      "countryCode": "TR",
+      "latitude": "37.69332936825816",
+      "longitude": "30.338745117187504",
+      "host_location": "BurdurTurkiye",
+      "id": 13
+    },
+    {
+      "cityName": "Usak",
+      "country": "Turkiye",
+      "countryCode": "TR",
+      "latitude": "38.73346456728629",
+      "longitude": "29.564208984375004",
+      "host_location": "UsakTurkiye",
+      "id": 14
+    },
+    {
+      "cityName": "Keles",
+      "country": "Turkiye",
+      "countryCode": "TR",
+      "latitude": "39.89788455730635",
+      "longitude": "29.174194335937504",
+      "host_location": "KelesTurkiye",
+      "id": 15
     }
   ]
 }

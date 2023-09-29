@@ -9,13 +9,12 @@ function SingleBookmark() {
   const navigate = useNavigate();
 
   //   const { getHotel, isLoadingCurrentHotel, currentHotel } = useHotels();
-  const { getBookmark, currentBookmark, isLoadingCurrentBookmark } =
-    useBookmark();
+  const { getBookmark, currentBookmark, isLoading } = useBookmark();
 
   useEffect(() => {
     getBookmark(id);
   }, [id]);
-  if (isLoadingCurrentBookmark || !currentBookmark) return <Loader />;
+  if (isLoading || !currentBookmark) return <Loader />;
 
   const handleBack = () => {
     navigate(-1);
