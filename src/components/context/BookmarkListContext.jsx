@@ -6,7 +6,7 @@ import useFetch from "../../hooks/useFetch";
 const BookmarkContext = createContext();
 const BASE_URL = "http://localhost:5000";
 function BookmarkListProvider({ children }) {
-  const [isLoadingCurrentBoookmark, setIsLoadingCurrentBookmark] =
+  const [isLoadingCurrentBookmark, setIsLoadingCurrentBookmark] =
     useState(false);
   const [currentBookmark, setCurrentBookmark] = useState();
 
@@ -15,7 +15,7 @@ function BookmarkListProvider({ children }) {
     setIsLoadingCurrentBookmark(true);
     try {
       const { data } = await axios.get(`${BASE_URL}/bookmarks/${id}`);
-      setCurrentHotel(data);
+      setCurrentBookmark(data);
       setIsLoadingCurrentBookmark(false);
     } catch (error) {
       toast.error(error.message);
@@ -27,7 +27,7 @@ function BookmarkListProvider({ children }) {
       value={{
         bookmarks,
         isLoading,
-        isLoadingCurrentBoookmark,
+        isLoadingCurrentBookmark,
         getBookmark,
         currentBookmark,
       }}
