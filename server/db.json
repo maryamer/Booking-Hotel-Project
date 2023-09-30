@@ -1325,112 +1325,22 @@
   ],
   "bookmarks": [
     {
-      "cityName": "Abalessa",
-      "country": "Algeria",
-      "countryCode": "DZ",
-      "latitude": "23.18455079512732",
-      "longitude": "3.795523257510883",
-      "host_location": "Abalessa Algeria",
+      "cityName": "Al Kharjah",
+      "country": "Egypt",
+      "countryCode": "EG",
+      "latitude": "24.86151853356795",
+      "longitude": "30.937500000000004",
+      "host_location": "Al KharjahEgypt",
       "id": 1
     },
     {
-      "cityName": "Mahidasht",
+      "cityName": "Bafq",
       "country": "Iran (Islamic Republic of)",
       "countryCode": "IR",
-      "latitude": "34.32869425037187",
-      "longitude": "46.724183117022086",
-      "host_location": "Mahidasht Iran (Islamic Republic of)",
-      "id": 4
-    },
-    {
-      "cityName": "Sanandaj",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "35.31372444726279",
-      "longitude": "47.03114358752335",
-      "host_location": "Sanandaj Iran (Islamic Republic of)",
-      "id": 5
-    },
-    {
-      "cityName": "A Dakhla Oasis",
-      "country": "Egypt",
-      "countryCode": "EG",
-      "latitude": "25.02090651422749",
-      "longitude": "29.09059588509316",
-      "host_location": "A Dakhla Oasis Egypt",
-      "id": 7
-    },
-    {
-      "cityName": "Baba Kot",
-      "country": "Pakistan",
-      "countryCode": "PK",
-      "latitude": "28.43528783183169",
-      "longitude": "67.78003711374224",
-      "host_location": "Baba Kot Pakistan",
-      "id": 8
-    },
-    {
-      "cityName": "Nima",
-      "country": "China",
-      "countryCode": "CN",
-      "latitude": "33.505617893674064",
-      "longitude": "102.03002929687501",
-      "host_location": "NimaChina",
-      "id": 9
-    },
-    {
-      "cityName": "Qom",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "34.47373155509983",
-      "longitude": "51.39404296875001",
-      "host_location": "QomIran (Islamic Republic of)",
-      "id": 10
-    },
-    {
-      "cityName": "Ain Al-Tamur District",
-      "country": "Iraq",
-      "countryCode": "IQ",
-      "latitude": "32.29061543148475",
-      "longitude": "43.63769531250001",
-      "host_location": "Ain Al-Tamur DistrictIraq",
-      "id": 11
-    },
-    {
-      "cityName": "Ilgin",
-      "country": "Turkiye",
-      "countryCode": "TR",
-      "latitude": "38.46259496418217",
-      "longitude": "32.02514648437501",
-      "host_location": "IlginTurkiye",
-      "id": 12
-    },
-    {
-      "cityName": "Burdur",
-      "country": "Turkiye",
-      "countryCode": "TR",
-      "latitude": "37.69332936825816",
-      "longitude": "30.338745117187504",
-      "host_location": "BurdurTurkiye",
-      "id": 13
-    },
-    {
-      "cityName": "Usak",
-      "country": "Turkiye",
-      "countryCode": "TR",
-      "latitude": "38.73346456728629",
-      "longitude": "29.564208984375004",
-      "host_location": "UsakTurkiye",
-      "id": 14
-    },
-    {
-      "cityName": "Keles",
-      "country": "Turkiye",
-      "countryCode": "TR",
-      "latitude": "39.89788455730635",
-      "longitude": "29.174194335937504",
-      "host_location": "KelesTurkiye",
-      "id": 15
+      "latitude": "31.742182762117984",
+      "longitude": "54.84375000000001",
+      "host_location": "BafqIran (Islamic Republic of)",
+      "id": 2
     }
   ]
 }
