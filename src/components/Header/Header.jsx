@@ -14,6 +14,7 @@ import {
   useNavigate,
   useSearchParams,
 } from "react-router-dom";
+import { useAuth } from "../context/AuthProvider";
 
 function Header() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -177,22 +178,21 @@ function OptionItem({ options, type, minLimit, handleOptions }) {
 }
 
 function User() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
-  // const { user, isAuthenticated, logout } = useAuth();
-  // const handleLogout = () => {
-  //   logout();
-  //   navigate("/");
-  // };
+  const { user, isAuthenticated, logout } = useAuth();
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
 
   return (
     <div>
       {isAuthenticated ? (
         <div>
-          {/* <strong>{user.name}</strong> */}
+          <strong>{user.name}</strong>
           <button>
-            logout
-            {/* &nbsp; <MdLogout onClick={handleLogout} className="logout icon" /> */}
+            &nbsp;logout &nbsp;{" "}
+            <MdLogout onClick={handleLogout} className="logout icon" />
           </button>
         </div>
       ) : (

@@ -5,21 +5,21 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const [email, setEmail] = useState("user@gmail.com");
   const [password, setPassword] = useState("1234");
-  // const { login, isAuthenticated } = useAuth();
-  // const navigate = useNavigate();
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (email && password) login(email, password);
-  // };
+  const { login, isAuthenticated } = useAuth();
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (email && password) login(email, password);
+  };
 
-  // useEffect(() => {
-  //   if (isAuthenticated) navigate("/", { replace: true });
-  // }, [isAuthenticated, navigate]);
+  useEffect(() => {
+    if (isAuthenticated) navigate("/", { replace: true });
+  }, [isAuthenticated, navigate]);
 
   return (
     <div className="loginContainer">
       <h2>Login</h2>
-      {/* <form onSubmit={handleSubmit} className="form">
+      <form onSubmit={handleSubmit} className="form">
         <div className="formControl">
           <label htmlFor="email">Email</label>
           <input
@@ -43,7 +43,7 @@ function Login() {
         <div className="buttons">
           <button className="btn btn--primary">Login</button>
         </div>
-      </form> */}
+      </form>
     </div>
   );
 }
