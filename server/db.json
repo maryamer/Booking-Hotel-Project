@@ -1341,6 +1341,15 @@
       "longitude": "54.84375000000001",
       "host_location": "BafqIran (Islamic Republic of)",
       "id": 2
+    },
+    {
+      "cityName": "Le Plessis-Hebert",
+      "country": "France",
+      "countryCode": "FR",
+      "latitude": "48.97728761652289",
+      "longitude": "1.34033203125",
+      "host_location": "Le Plessis-HebertFrance",
+      "id": 3
     }
   ]
 }
