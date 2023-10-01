@@ -12,6 +12,7 @@ import Header from "./components/Header/Header";
 import Hotels from "./components/Hotels/Hotels";
 import LocationList from "./components/LocationList/LocationList";
 import Login from "./components/Login/Login";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import SingleBookmark from "./components/SingleBookmark/SingleBookmark";
 import SingleHotel from "./components/SingleHotel/SingleHotel";
 
@@ -28,7 +29,15 @@ function App() {
               <Route index element={<Hotels />} />
               <Route path=":id" element={<SingleHotel />} />
             </Route>
-            <Route path="/bookmark" element={<BookmarkLayout />}>
+
+            <Route
+              path="/bookmark"
+              element={
+                <ProtectedRoute>
+                  <BookmarkLayout />
+                </ProtectedRoute>
+              }
+            >
               <Route index element={<Bookmark />} />
               <Route path=":id" element={<SingleBookmark />} />
               <Route path="add" element={<AddNewBookmark />} />
