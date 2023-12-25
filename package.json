@@ -11,9 +11,10 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.0.1",
     "axios": "^1.5.1",
     "date-fns": "^2.30.0",
     "json-server": "^0.17.3",
@@ -24,6 +25,7 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.11.0",
     "react-leaflet": "^4.2.1",
+    "react-redux": "^9.0.4",
     "react-router-dom": "^6.16.0"
   },
   "devDependencies": {

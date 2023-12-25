@@ -1,15 +1,27 @@
 import { useEffect, useState } from "react";
-import { useAuth } from "../context/AuthProvider";
+import { useAuth } from "../context1/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import Data from "../../../data/Data";
 
-function Login() {
+function Login({ isAuthenticated, setIsAuthenticated }) {
   const [email, setEmail] = useState("user@gmail.com");
-  const [password, setPassword] = useState("1234");
-  const { login, isAuthenticated } = useAuth();
+  const [password, setPassword] = useState("123");
+  const { user } = Data();
+
+  // const { login, isAuthenticated } = useAuth();
+  const login = (email, pass) => {
+    if (user.email === email && user.password == pass) {
+      setIsAuthenticated(true);
+      navigate(-1);
+    }
+  };
+
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (email && password) login(email, password);
+    if (email && password) {
+      login(email, password);
+    }
   };
 
   useEffect(() => {

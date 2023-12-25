@@ -14,9 +14,11 @@ import {
   useNavigate,
   useSearchParams,
 } from "react-router-dom";
-import { useAuth } from "../context/AuthProvider";
+import { useAuth } from "../context1/AuthProvider";
+import Data from "../../../data/Data";
 
-function Header() {
+function Header({ isAuthenticated, logout }) {
+  const { user } = Data();
   const [searchParams, setSearchParams] = useSearchParams();
   const [destination, setDestination] = useState(
     searchParams.get("destination") || ""
@@ -46,6 +48,7 @@ function Header() {
     });
   };
   const handleSearch = () => {
+    console.log(options);
     const encodedParams = createSearchParams({
       date: JSON.stringify(date),
       destination,
@@ -56,6 +59,7 @@ function Header() {
       pathname: "/hotels",
       search: encodedParams.toString(),
     });
+    console.log("search");
   };
   return (
     <div className="header">
@@ -119,7 +123,7 @@ function Header() {
           </button>
         </div>
       </div>
-      <User />
+      <User user={user} isAuthenticated={isAuthenticated} logout={logout} />
     </div>
   );
 }
@@ -177,14 +181,13 @@ function OptionItem({ options, type, minLimit, handleOptions }) {
   );
 }
 
-function User() {
+function User({ user, isAuthenticated, logout }) {
   const navigate = useNavigate();
-  const { user, isAuthenticated, logout } = useAuth();
+  // const { user, isAuthenticated, logout } = useAuth();
   const handleLogout = () => {
     logout();
     navigate("/");
   };
-
   return (
     <div>
       {isAuthenticated ? (

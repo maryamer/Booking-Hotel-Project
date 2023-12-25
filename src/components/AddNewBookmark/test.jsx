@@ -1,19 +1,16 @@
 import axios from "axios";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReactCountryFlag from "react-country-flag";
 import { toast } from "react-hot-toast";
-import { json, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useUrlLocation from "../../hooks/useUrlLocation";
-import { useBookmark } from "../context1/BookmarkListContext";
 import Loader from "../Loader/Loader";
-import Data from "../../../data/Data";
-import useLocalStorage from "../../hooks/useLocalStorage";
 import { useDispatch, useSelector } from "react-redux";
 import { addToBookmarks } from "../context/hotelsSlice";
 
 const BASE_GEOCODING_URL =
   "https://api.bigdatacloud.net/data/reverse-geocode-client";
+
 function AddNewBookmark() {
   const navigate = useNavigate();
   const [lat, lng] = useUrlLocation();
@@ -21,36 +18,18 @@ function AddNewBookmark() {
   const [country, setCountry] = useState("");
   const [countryCode, setCountryCode] = useState("");
   const [isLoadingGeoCoding, setIsLoadingGeoCoding] = useState(false);
-  // const { createBookmark } = useBookmark();
   const dispatch = useDispatch();
 
-  const [newBookmark, setNewBookmark] = useState({
+  const newBookmark = {
     cityName,
     country,
     countryCode,
     latitude: lat,
     longitude: lng,
     host_location: cityName + "" + country,
-  });
+  };
+
   useEffect(() => {
-    setNewBookmark({
-      cityName,
-      country,
-      countryCode,
-      latitude: lat,
-      longitude: lng,
-      host_location: cityName + "" + country,
-    });
-  }, [cityName, country, countryCode, lat, lng]);
-  useEffect(() => {
-    const newBookmark = {
-      cityName,
-      country,
-      countryCode,
-      latitude: lat,
-      longitude: lng,
-      host_location: cityName + "" + country,
-    };
     console.log(newBookmark);
     if (!lat || !lng) return;
     async function fetchLocationData() {
@@ -74,12 +53,14 @@ function AddNewBookmark() {
     }
     fetchLocationData();
   }, [lat, lng]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!cityName || !country) return;
     dispatch(addToBookmarks(newBookmark));
     navigate("/bookmark");
   };
+
   if (isLoadingGeoCoding) return <Loader />;
   return (
     <div>
@@ -108,7 +89,7 @@ function AddNewBookmark() {
             <ReactCountryFlag svg countryCode={countryCode} />
           </span>
         </div>
-        <div className="buttons">
+        <button className="buttons">
           <button
             onClick={(e) => {
               e.preventDefault(), navigate(-1);
@@ -117,8 +98,10 @@ function AddNewBookmark() {
           >
             &larr; Back
           </button>
-          <button className="btn btn--primary"> Add </button>
-        </div>
+          <button type="submit" className="btn btn--primary">
+            Add Bookmark
+          </button>
+        </button>
       </form>
     </div>
   );

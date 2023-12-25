@@ -1,20 +1,39 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ReactCountryFlag from "react-country-flag";
 import { useNavigate, useParams } from "react-router-dom";
-import { useBookmark } from "../context/BookmarkListContext";
+// import { useBookmark } from "../context/BookmarkListContext";
 import Loader from "../Loader/Loader";
+import Data from "../../../data/Data";
+import useLocalStorage from "../../hooks/useLocalStorage";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getCurrentBookmark,
+  localStorageHandler,
+} from "../context/hotelsSlice";
 
 function SingleBookmark() {
   const { id } = useParams();
   const navigate = useNavigate();
 
   //   const { getHotel, isLoadingCurrentHotel, currentHotel } = useHotels();
-  const { getBookmark, currentBookmark, isLoading } = useBookmark();
+  // const { getBookmark, currentBookmark, isLoading } = useBookmark();
+
+  // const { bookmarks: allBookmarks } = Data();
+  // const [bookmarks, setBookmarks] = useLocalStorage("bookmarks", allBookmarks);
+
+  const { query, loading, currentBookmark, bookmarks } = useSelector(
+    (state) => state.hotels
+  );
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    getBookmark(id);
-  }, [id]);
-  if (isLoading || !currentBookmark) return <Loader />;
+    dispatch(getCurrentBookmark(id));
+    dispatch(localStorageHandler("currentBookmark"));
+  }, []);
+  // useEffect(() => {
+  // getBookmark(id);
+  // }, [id]);
+  if (!currentBookmark) return <Loader />;
 
   const handleBack = () => {
     navigate(-1);

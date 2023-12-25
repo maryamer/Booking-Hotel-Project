@@ -6,7 +6,7 @@ import {
   Popup,
   useMapEvent,
 } from "react-leaflet";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useGeoLocation from "../../hooks/useGeoLocation";
 import useUrlLocation from "../../hooks/useUrlLocation";
@@ -68,10 +68,17 @@ function ChangeCenter({ position }) {
   return null;
 }
 function DetectClick() {
+  const { pathname } = useLocation();
+
   const navigate = useNavigate();
   useMapEvent({
-    click: (e) =>
-      navigate(`/bookmark/add?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
+    click: (e) => {
+      pathname.includes("add")
+        ? navigate(`/bookmark/add?lat=${e.latlng.lat}&lng=${e.latlng.lng}`, {
+            replace: true,
+          })
+        : navigate(`/bookmark/add?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
+    },
   });
   return null;
 }
