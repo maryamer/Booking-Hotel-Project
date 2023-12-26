@@ -1,11 +1,12 @@
 import useFetch from "../../hooks/useFetch";
 import Data from "../../../data/Data";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { localStorageHandler } from "../context/hotelsSlice";
 import Loader from "../Loader/Loader";
+import useUrlLocation from "../../hooks/useUrlLocation";
 function LocationList() {
   const [loading, setLoading] = useState(true);
 
@@ -26,7 +27,7 @@ function LocationList() {
 
   if (!hotels) <p>Loading...</p>;
   return (
-    <div className="nearbyLocation max-w-[1280px] mx-auto my-8 ">
+    <div className="nearbyLocation max-w-[1280px] mx-auto mt-8 ">
       <h2 className="mb-4"> Near by location</h2>
       <div className="locationList grid gap-8 ">
         {hotels &&
@@ -62,6 +63,7 @@ function LocationList() {
 export default LocationList;
 
 export function Photo({ url, alt }) {
+  const { pathname } = useLocation();
   const [loading, setLoading] = useState(true);
 
   const handleImageLoad = () => {
@@ -71,11 +73,10 @@ export function Photo({ url, alt }) {
   return (
     <>
       <div
-        className="w-1/3 h-1/3 bg-gray-200"
+        className="w-full h-full rounded-lg md:h-[300px] bg-gray-200"
         style={{
           display: loading ? "flex" : "none",
-          width: "100%",
-          height: "330px",
+
           alignItems: "center",
         }}
       >
@@ -83,7 +84,9 @@ export function Photo({ url, alt }) {
       </div>
       <img
         src={url}
-        className="w-[70%] md:w-full  h-auto object-cover object-center rounded-lg mb-2"
+        className={`${
+          pathname.includes("hotels") ? "w-[70%]" : "w-full"
+        }  md:w-full  h-64 object-cover object-center rounded-lg mb-2`}
         alt={alt}
         onLoad={handleImageLoad}
         style={{ display: loading ? "none" : "block" }}

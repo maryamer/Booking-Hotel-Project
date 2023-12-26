@@ -29,7 +29,7 @@ function SingleHotel() {
   console.log(currentHotel);
   if (isLoading || !currentHotel) return <Loader />;
   return (
-    <div className="room flex justify-center items-center gap-4 max-w-screen-xl mx-auto md:mt-2">
+    <div className="room flex justify-center items-center gap-4 max-w-screen-xl mx-auto mt-12 md:mt-4">
       {currentHotel && (
         <div className="roomDetail flex flex-col justify-center items-center ">
           <Photo url={currentHotel.picture_url.url} alt={currentHotel.name} />

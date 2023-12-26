@@ -14,9 +14,9 @@ function AppLayout() {
   const { query, loading, characterLoading, hotels } = useSelector(
     (state) => state.hotels
   );
-
+  // h-[calc(100vh_-_130px)]
   return (
-    <div className="appLayout flex flex-col md:flex-row justify-between h-[calc(100vh_-_130px)] bg-[color:var(--text-100)] items-stretch mt-4">
+    <div className="appLayout flex flex-col md:flex-row justify-between h-screen bg-[color:var(--text-100)] items-stretch mt-4">
       <div className="sidebar w-full flex flex-col justify-center h-1/2 md:h-full p-1 overflow-y-scroll pr-4 md:w-6/12">
         <Outlet />
       </div>

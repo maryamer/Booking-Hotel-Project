@@ -2,7 +2,6 @@ import { LoaderIcon } from "react-hot-toast";
 function Loader() {
   return (
     <div
-      className="h-1/2"
       style={{
         color: "var(--primary-600)",
         display: "flex",

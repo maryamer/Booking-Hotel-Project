@@ -153,7 +153,7 @@ function Hotels() {
   }, [room, destination]);
   if (!hotels) return <Loader />;
   return (
-    <div className="searchList flex flex-col gap-4 mt-20">
+    <div className="searchList flex flex-col gap-4 mt-[950px] md:mt-[700px] ">
       <h2> Search Results {hotels.length}</h2>
 
       {hotels &&
@@ -165,7 +165,7 @@ function Hotels() {
             <div
               className={`searchItem flex gap-4 ${
                 item.id == currentHotel?.id &&
-                "current-hotel bg-blue-100  rounded-2xl border-[3px] border-soli/5d"
+                "current-hotel bg-blue-100  rounded-2xl border-[3px] border-solid"
               }`}
             >
               <img
