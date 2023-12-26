@@ -78,13 +78,13 @@ function Header({ isAuthenticated, logout }) {
           <span className="hidden md:flex">Bookmarks</span>
         </NavLink>
         <div className="headerSearchItem flex relative mx-1 items-center">
-          <MdLocationOn className="headerIcon locationIcon text-[#f43f5e]" />
+          <MdLocationOn className="headerIcon w-5 h-5 locationIcon text-[#f43f5e]" />
           <input
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
             type="text "
             placeholder="where to go?"
-            className="headerSearchInput py-3 w-24 text-base"
+            className="headerSearchInput py-3 w-24 md:w-32 text-base"
             name="destination"
             id="destination"
           />
@@ -145,7 +145,7 @@ function Header({ isAuthenticated, logout }) {
             className="headerSearchBtn flex items-center justify-center md:bg-[#64748b] p-2 rounded-2xl md:text-white"
             onClick={handleSearch}
           >
-            <HiSearch className="headerIcon w-6 h-6 text-gray-700 inline-block" />
+            <HiSearch className="headerIcon w-6 h-6 md:text-white text-gray-700 inline-block" />
           </button>
         </div>
       </div>
