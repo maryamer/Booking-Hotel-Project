@@ -68,7 +68,7 @@ function Header({ isAuthenticated, logout }) {
   useOutsideClick(dateRef, "dateDropDown", () => setOpenDate(false));
 
   return (
-    <div className="header w-full flex justify-center  items-center ">
+    <div className="header w-full flex justify-center  items-center mt-1 ">
       <div className="headerSearch flex justify-center md:justify-between items-center border rounded-3xl ">
         <NavLink to="/bookmark">
           {" "}
@@ -225,7 +225,7 @@ function User({ user, isAuthenticated, logout }) {
         <div className="flex items-center ">
           <strong className="self-center">{user.name}</strong>
           <button className="flex items-center" onClick={handleLogout}>
-            <span className="mx-1">logout </span>
+            <span className="mx-1 text-red-600 font-medium">logout </span>
             <MdLogout className="logout icon text-[color:var(--rose-500)] w-[1.1rem] h-[1.1rem]" />
           </button>
         </div>

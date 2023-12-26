@@ -37,7 +37,7 @@ function Bookmark() {
               <div
                 className={`bookmarkItem border border-[color:var(--text-400)] flex items-center justify-between mb-4 p-4 rounded-2xl border-solid${
                   item.id === currentBookmark?.id &&
-                  "current-bookmark border-[color:var(--primary-600)] bg-[color:var(--text-100)] border-2 border-solid"
+                  "current-bookmark bg-blue-100 bg-[color:var(--text-100)] border-2 border-solid"
                 }`}
               >
                 <div>

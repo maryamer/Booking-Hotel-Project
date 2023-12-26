@@ -33,7 +33,7 @@ function LocationList() {
           hotels.map((item) => {
             return (
               <Link
-                to={`/hotels/${item.id}`}
+                to={`/hotels/${item.id}?lat=${item.latitude}&&lng=${item.longitude}`}
                 className="locationItem"
                 key={item.id}
               >

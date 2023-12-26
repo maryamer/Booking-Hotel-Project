@@ -153,7 +153,7 @@ function Hotels() {
   }, [room, destination]);
   if (!hotels) return <Loader />;
   return (
-    <div className="searchList flex flex-col gap-4">
+    <div className="searchList flex flex-col gap-4 mt-20">
       <h2> Search Results {hotels.length}</h2>
 
       {hotels &&
@@ -165,11 +165,11 @@ function Hotels() {
             <div
               className={`searchItem flex gap-4 ${
                 item.id == currentHotel?.id &&
-                "current-hotel border-[color:var(--primary-700)] rounded-2xl border-[3px] border-soli/5d"
+                "current-hotel bg-blue-100  rounded-2xl border-[3px] border-soli/5d"
               }`}
             >
               <img
-                className=" w-24 h-24 object-cover rounded-2xl"
+                className=" w-28 h-28 object-cover rounded-2xl"
                 src={item.picture_url.url}
                 alt={item.name}
               />
@@ -180,10 +180,10 @@ function Hotels() {
                 <p className="name mb-[0.3rem] text-[color:var(--text-400)]">
                   {item.name}
                 </p>
-                <p className="font-medium flex items-center">
+                <p className="font-medium flex items-center text-green-700">
                   €&nbsp;{item.price}&nbsp;
+                  <span className="text-gray-600">night</span>
                 </p>
-                <span>night</span>
               </div>
             </div>
           </Link>
