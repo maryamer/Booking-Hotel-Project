@@ -88,7 +88,7 @@ function Header({ isAuthenticated, logout }) {
             name="destination"
             id="destination"
           />
-          <span className="seperator inline-block w-[1px] h-8  bg-[#94a3b8]"></span>
+          <span className="seperator hidden md:inline-block w-[1px] h-8  bg-[#94a3b8]"></span>
         </div>
         <div className="headerSearchItem flex relative items-center">
           <div
@@ -115,7 +115,7 @@ function Header({ isAuthenticated, logout }) {
               />
             </div>
           )}
-          <span className="seperator inline-block w-[1px] h-8  bg-[#94a3b8]"></span>
+          <span className="seperator hidden md:inline-block w-[1px] h-8  bg-[#94a3b8]"></span>
         </div>
         <div className="headerSearchItem flex relative items-center ">
           <div
@@ -138,7 +138,7 @@ function Header({ isAuthenticated, logout }) {
               setOpenOptions={setOpenOptions}
             />
           )}
-          <span className="seperator inline-block w-[1px] h-8  bg-[#94a3b8]"></span>
+          <span className="seperator hidden md:inline-block w-[1px] h-8  bg-[#94a3b8]"></span>
         </div>
         <div className="headerSearchItem flex relative items-center md:mx-2">
           <button
