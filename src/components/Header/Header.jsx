@@ -73,7 +73,7 @@ function Header({ isAuthenticated, logout }) {
         <NavLink to="/bookmark">
           {" "}
           <span className="flex md:hidden">
-            <BsBookmarkFill className="text-blue-600 mx-1 md:mx-0" />
+            <BsBookmarkFill className="text-blue-600 mx-1 w-5 h-5 md:mx-0" />
           </span>
           <span className="hidden md:flex">Bookmarks</span>
         </NavLink>
@@ -123,7 +123,7 @@ function Header({ isAuthenticated, logout }) {
             id="optionDropDown"
             onClick={() => setOpenOptions((prev) => !prev)}
           >
-            <span className="flex md:hidden justify-center text-center text-sm font-light">
+            <span className="flex md:hidden font-bold text-blue-700 justify-center text-center text-sm">
               Room Options
             </span>
             <span className="hidden md:flex">
@@ -145,7 +145,7 @@ function Header({ isAuthenticated, logout }) {
             className="headerSearchBtn flex items-center justify-center md:bg-[#64748b] p-2 rounded-2xl md:text-white"
             onClick={handleSearch}
           >
-            <HiSearch className="headerIcon w-6 h-6 inline-block" />
+            <HiSearch className="headerIcon w-6 h-6 text-gray-700 inline-block" />
           </button>
         </div>
       </div>

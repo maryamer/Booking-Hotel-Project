@@ -17,7 +17,7 @@ function AppLayout() {
 
   return (
     <div className="appLayout flex flex-col md:flex-row justify-between h-[calc(100vh_-_130px)] bg-[color:var(--text-100)] items-stretch mt-4">
-      <div className="sidebar w-full h-1/2 md:h-full overflow-y-scroll pr-4 md:w-6/12">
+      <div className="sidebar w-full h-1/2 md:h-full p-1 overflow-y-scroll pr-4 md:w-6/12">
         <Outlet />
       </div>
 

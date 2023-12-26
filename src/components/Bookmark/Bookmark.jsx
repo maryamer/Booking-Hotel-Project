@@ -32,7 +32,7 @@ function Bookmark() {
           bookmarks.map((item) => (
             <Link
               key={item.id}
-              to={`${item.id}?lat=${item.latitude}?lng=${item.longitude}`}
+              to={`${item.id}?lat=${item.latitude}&&lng=${item.longitude}`}
             >
               <div
                 className={`bookmarkItem border border-[color:var(--text-400)] flex items-center justify-between mb-4 p-4 rounded-2xl border-solid${
