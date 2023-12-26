@@ -29,14 +29,17 @@ function Map({ markerLocations }) {
     }
   }, [geoLocationPosition]);
   return (
-    <div className="mapContainer">
+    <div className="mapContainer flex-1 bg-[color:var(--text-100)] relative z-40">
       <MapContainer
-        className="map"
+        className="map h-full"
         center={mapCenter}
         zoom={8}
         scrollWheelZoom={true}
       >
-        <button className="getLocation" onClick={getPosition}>
+        <button
+          className="getLocation text-xs shadow-[0_0_10px_var(--primary-500)] px-2 py-[0.3rem] left-4 bottom-4 z-30 font-bold rounded-lg absolute text-white"
+          onClick={getPosition}
+        >
           {isLoadingPosition ? "loading your position" : "Use your location"}
         </button>
         <TileLayer

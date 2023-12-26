@@ -1,12 +1,12 @@
 @import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
 
-.header {
+/* .header {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-}
-.headerSearch {
+} */
+/* .headerSearch {
   display: flex;
   width: 100%;
   max-width: 900px;
@@ -16,38 +16,34 @@
   border: 1px solid #ebe9e9;
   border-radius: 1.5rem;
   padding: 1rem;
-}
-
-.headerSearchInput {
-  padding: 0.7rem 0.5rem;
-  font-size: 1rem;
-}
-.headerSearchItem {
+} */
+/* ` */
+/* .headerSearchItem {
   display: flex;
   align-items: center;
   position: relative;
-}
-.headerSearchItem .seperator {
+} */
+/* .headerSearchItem .seperator {
   display: inline-block;
   width: 1px;
   height: 30px;
   background-color: var(--text-400);
   margin: 0 1rem;
-}
+} */
 .textField {
   padding: 0.7rem 1rem;
   border-radius: 0.5rem;
 }
-.headerIcon {
+/* .headerIcon {
   width: 1.5rem;
   height: 1.5rem;
   display: inline-block;
-}
-.locationIcon {
+} */
+/* .locationIcon {
   color: var(--rose-500);
-}
+} */
 
-.guestOptions {
+/* .guestOptions {
   background-color: #fff;
   box-shadow: 0 0 10px #efefef;
   border-radius: 1rem;
@@ -57,54 +53,54 @@
   top: 2rem;
   width: 220px;
   z-index: 1000;
-}
-.guestOptionItem {
+} */
+/* .guestOptionItem {
   display: flex;
   align-items: center;
   gap: 1rem;
   justify-content: space-between;
-}
+} */
 .guestOptionItem:not(:last-child) {
   margin-bottom: 1rem;
 }
-.guestOptionItem span,
+/* .guestOptionItem span,
 .guestOptionItem button {
   display: inline-block;
-}
-.guestOptionItem .optionCounterBtn {
+} */
+/* .guestOptionItem .optionCounterBtn {
   padding: 0.5rem;
   border-radius: 0.5rem;
   color: var(--text-600);
   background-color: var(--text-100);
-}
-.optionText {
+} */
+/* .optionText {
   display: inline-block;
   flex: 1;
   font-size: 0.9rem;
-}
-
+} */
+/* 
 .optionCounter {
   display: flex;
   align-items: center;
   gap: 1rem;
-}
+} */
 
-.date {
+/* .date {
   position: absolute;
   top: 50px;
   left: -5rem;
   z-index: 1002;
-}
+} */
 
-.dateIcon {
+/* .dateIcon {
   color: var(--primary-700);
-}
+} */
 
-.dateDropDown {
+/* .dateDropDown {
   margin-left: 0.5rem;
   font-size: 0.8rem;
-}
-
+} */
+/* 
 .headerSearchBtn {
   display: flex;
   align-items: center;
@@ -113,22 +109,20 @@
   color: #fff;
   padding: 0.6rem;
   border-radius: 1rem;
-}
+} */
 
 /*  location list */
-.nearbyLocation {
+/* .nearbyLocation {
   max-width: 1280px;
   margin: 2rem auto;
-}
-.nearbyLocation h2 {
+} */
+/* .nearbyLocation h2 {
   margin-bottom: 1rem;
-}
+} */
 .locationList {
-  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
 }
-
+/* 
 .locationItem img {
   width: 100%;
   height: 20rem;
@@ -136,7 +130,7 @@
   object-position: center;
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
-}
+} */
 
 .locationItemDesc > :not(:last-child) {
   margin-bottom: 0.2rem;
@@ -145,37 +139,36 @@
 .locationItem .locationItemDesc .name {
   color: var(--text-400);
 }
-.locationItem .locationItemDesc .location {
+/* .locationItem .locationItemDesc .location {
   font-weight: 500;
-}
-.locationItem .locationItemDesc .price {
+} */
+/* .locationItem .locationItemDesc .price {
   font-weight: 500;
   display: flex;
   align-items: center;
-}
+} */
 
 .locationItem .locationItemDesc .price span {
   color: var(--text-400);
-  font-weight: 400;
 }
 
 /* room detail */
-.room {
+/* .room {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
   gap: 1rem;
   max-width: 1280px;
   margin: 2rem auto;
-}
+} */
 
-.roomDetail h2 {
+/* .roomDetail h2 {
   margin-bottom: 0.3rem;
   font-size: 1rem;
-}
-.roomDetail > div {
+} */
+/* .roomDetail > div {
   margin-bottom: 1rem;
-}
+} */
 .roomDetail img {
   width: 100%;
   height: auto;
@@ -184,30 +177,30 @@
 }
 
 /* map */
-
+/* 
 .mapContainer {
   flex: 1;
   background-color: var(--text-100);
-  position: relative;
-}
-.mapContainer button.getLocation {
+} */
+/* .mapContainer button.getLocation {
   padding: 0.3rem 0.5rem;
-  font-size: 0.7rem;
-  font-weight: bold;
-  border-radius: 0.5rem;
-  position: absolute;
   bottom: 1rem;
   left: 1rem;
   background-color: var(--primary-600);
   box-shadow: 0 0 10px var(--primary-600);
-  color: #fff;
   z-index: 1000;
-}
-.map {
-  height: 100%;
-}
 
-.searchList {
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  position: absolute;
+  color: #fff;
+} */
+/* .map {
+  height: 100%;
+} */
+
+/* .searchList {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -241,15 +234,15 @@
 .searchItem .searchItemDesc .price span {
   color: var(--text-400);
   font-weight: 400;
-}
+} */
 
 /* app layout */
-.appLayout {
+/* .appLayout {
   margin-top: 1rem;
   display: flex;
   justify-content: space-between;
   height: calc(100vh - 130px);
-  /* background-color: var(--text-100); */
+  background-color: var(--text-100);
   align-items: stretch;
 }
 
@@ -268,10 +261,10 @@
   .sidebar {
     width: 50%;
   }
-}
+} */
 
 /* bookmark page */
-.bookmarkList {
+/* .bookmarkList {
   margin-top: 1rem;
 }
 .bookmarkItem {
@@ -297,10 +290,10 @@
   color: var(--rose-500);
   width: 1.5rem;
   height: 1.5rem;
-}
+} */
 
 /* form */
-
+/* 
 .form .formControl {
   margin-bottom: 1rem;
   position: relative;
@@ -322,9 +315,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
+} */
 
-.btn {
+/* .btn {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
 }
@@ -341,13 +334,13 @@
   position: absolute;
   right: 1rem;
   top: 50%;
-}
+} */
 
 a.active {
   color: var(--primary-600);
   font-weight: 700;
 }
-
+/* 
 .loginContainer {
   margin: 2rem auto;
   max-width: 25rem;
@@ -368,4 +361,4 @@ a.active {
   color: var(--rose-500);
   width: 1.1rem;
   height: 1.1rem;
-}
+} */

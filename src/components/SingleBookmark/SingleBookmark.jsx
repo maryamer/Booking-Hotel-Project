@@ -41,7 +41,10 @@ function SingleBookmark() {
   return (
     <div className="room">
       <div className="roomDetail">
-        <button onClick={handleBack} className="btn btn--back">
+        <button
+          onClick={handleBack}
+          className="btn px-4 py-2 rounded-lg btn--back border border-[color:var(--text-400)] border-solid"
+        >
           ...Back to bookmarks
         </button>
         <h2>{currentBookmark.cityName}</h2>

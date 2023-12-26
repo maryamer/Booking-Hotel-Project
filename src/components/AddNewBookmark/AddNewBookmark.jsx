@@ -84,40 +84,53 @@ function AddNewBookmark() {
   return (
     <div>
       <h2>Add New Location to Bookmark List</h2>
-      <form action="" className="form" onSubmit={handleSubmit}>
-        <div className="formControl">
-          <label htmlFor="cityName">City Name: </label>
+      <form
+        action=""
+        className="form w-full text-[color:var(--rose-500)]  h-full"
+        onSubmit={handleSubmit}
+      >
+        <div className="formControl relative mb-4">
+          <label className="block mb-[0.2rem]" htmlFor="cityName">
+            City Name:{" "}
+          </label>
           <input
             type="text"
+            className="border border-[color:var(--text-400)] w-full p-2 rounded-lg border-solid"
             name="cityName"
             id="cityName"
             value={cityName}
             onChange={(e) => setCityName(e.target.value)}
           />
         </div>
-        <div className="formControl">
-          <label htmlFor="country">Country Name: </label>
+        <div className="formControl relative mb-4">
+          <label className="block mb-[0.2rem]" htmlFor="country">
+            Country Name:{" "}
+          </label>
           <input
             type="text"
+            className="border border-[color:var(--text-400)] w-full p-2 rounded-lg border-solid"
             name="country"
             id="country"
             value={country}
             onChange={(e) => setCountry(e.target.value)}
           />
-          <span className="flag">
+          <span className="flag absolute right-4 top-2/4">
             <ReactCountryFlag svg countryCode={countryCode} />
           </span>
         </div>
-        <div className="buttons">
+        <div className="buttons flex items-center justify-between">
           <button
             onClick={(e) => {
               e.preventDefault(), navigate(-1);
             }}
-            className="btn btn--back"
+            className="btn px-4 py-2 rounded-lg btn--back border border-[color:var(--text-400)] border-solid"
           >
             &larr; Back
           </button>
-          <button className="btn btn--primary"> Add </button>
+          <button className="btn px-4 py-2 rounded-lg bg-[color:var(--primary-600)] text-white btn--primary">
+            {" "}
+            Add{" "}
+          </button>
         </div>
       </form>
     </div>

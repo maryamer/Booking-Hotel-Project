@@ -26,9 +26,9 @@ function LocationList() {
 
   if (!hotels) <p>Loading...</p>;
   return (
-    <div className="nearbyLocation">
-      <h2> Near by location</h2>
-      <div className="locationList">
+    <div className="nearbyLocation max-w-[1280px] mx-auto my-8">
+      <h2 className="mb-4"> Near by location</h2>
+      <div className="locationList grid gap-8 ">
         {hotels &&
           hotels.map((item) => {
             return (
@@ -39,11 +39,16 @@ function LocationList() {
               >
                 <Photo url={item.picture_url.url} alt={item.name} />
                 <div className="locationItemDesc">
-                  <p className="location">{item.smart_location}</p>
+                  <p className="location font-medium">{item.smart_location}</p>
                   <p className="name">{item.name}</p>
-                  <p className="price">
+                  <p className="price font-medium flex items-center">
                     €&nbsp;{item.price}&nbsp;
-                    <span>night</span>
+                    <span
+                      className="
+                    font-normal"
+                    >
+                      night
+                    </span>
                   </p>
                 </div>
               </Link>
@@ -78,6 +83,7 @@ export function Photo({ url, alt }) {
       </div>
       <img
         src={url}
+        className="w-full h-64 object-cover object-center rounded-lg mb-2"
         alt={alt}
         onLoad={handleImageLoad}
         style={{ display: loading ? "none" : "block" }}

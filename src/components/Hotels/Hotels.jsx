@@ -153,7 +153,7 @@ function Hotels() {
   }, [room, destination]);
   if (!hotels) return <Loader />;
   return (
-    <div className="searchList">
+    <div className="searchList flex flex-col gap-4">
       <h2> Search Results {hotels.length}</h2>
 
       {hotels &&
@@ -163,15 +163,26 @@ function Hotels() {
             to={`/hotels/${item.id}?lat=${item.latitude}&lng=${item.longitude}`}
           >
             <div
-              className={`searchItem ${
-                item.id == currentHotel?.id && "current-hotel"
+              className={`searchItem flex gap-4 ${
+                item.id == currentHotel?.id &&
+                "current-hotel border-[color:var(--primary-700)] rounded-2xl border-[3px] border-soli/5d"
               }`}
             >
-              <img src={item.picture_url.url} alt={item.name} />
+              <img
+                className=" w-24 h-24 object-cover rounded-2xl"
+                src={item.picture_url.url}
+                alt={item.name}
+              />
               <div className="searchItemDesc">
-                <p className="location">{item.smart_location}</p>
-                <p className="name">{item.name}</p>
-                €&nbsp;{item.price}&nbsp;
+                <p className="location font-medium mb-[0.3rem]">
+                  {item.smart_location}
+                </p>
+                <p className="name mb-[0.3rem] text-[color:var(--text-400)]">
+                  {item.name}
+                </p>
+                <p className="font-medium flex items-center">
+                  €&nbsp;{item.price}&nbsp;
+                </p>
                 <span>night</span>
               </div>
             </div>

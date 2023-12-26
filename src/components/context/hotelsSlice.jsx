@@ -1433,7 +1433,7 @@ const hotelsSlice = createSlice({
         ],
       },
     ],
-    isAuthenticated: false,
+    isAuthenticated: JSON.parse(localStorage.getItem("isAuth")) || false,
     error: "",
   },
   reducers: {
@@ -1475,6 +1475,15 @@ const hotelsSlice = createSlice({
         (item) => item.accommodates >= room
       );
     },
+    handleLogout: (state, action) => {
+      state.isAuthenticated = false;
+      localStorage.setItem("isAuth", false);
+    },
+    handleLogin: (state, action) => {
+      state.isAuthenticated = true;
+      localStorage.setItem("isAuth", true);
+    },
+
     localStorageHandler: (state, action) => {
       JSON.parse(localStorage.getItem(`${action.payload}`)) ||
         localStorage.setItem(
@@ -1492,6 +1501,8 @@ export const {
   getCurrentHotel,
   getCurrentBookmark,
   searchHotels,
+  handleLogout,
+  handleLogin,
 } = hotelsSlice.actions;
 
 export default hotelsSlice.reducer;

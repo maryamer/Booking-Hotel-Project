@@ -17,16 +17,18 @@ import SingleBookmark from "./components/SingleBookmark/SingleBookmark";
 import SingleHotel from "./components/SingleHotel/SingleHotel";
 import { useState } from "react";
 import useLocalStorage from "./hooks/useLocalStorage";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { handleLogout } from "./components/context/hotelsSlice";
 
 function App() {
-  const { hotels } = useSelector((state) => state.hotels);
-  const [isAuthenticated, setIsAuthenticated] = useLocalStorage(
-    "isAuth",
-    false
-  );
+  const { hotels, isAuthenticated } = useSelector((state) => state.hotels);
+  const [isAuthenticated1, setIsAuthenticated] = useState();
+  const dispatch = useDispatch();
   const logout = () => {
-    setIsAuthenticated(false);
+    dispatch(handleLogout());
+  };
+  const login = () => {
+    dispatch(handleLogin());
   };
   return (
     <>

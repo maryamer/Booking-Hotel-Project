@@ -27,7 +27,7 @@ function Bookmark() {
   return (
     <div>
       <h2>BookmarkList</h2>{" "}
-      <div className="bookmarkList">
+      <div className="bookmarkList mt-4">
         {bookmarks &&
           bookmarks.map((item) => (
             <Link
@@ -35,8 +35,9 @@ function Bookmark() {
               to={`${item.id}?lat=${item.latitude}?lng=${item.longitude}`}
             >
               <div
-                className={`bookmarkItem ${
-                  item.id === currentBookmark?.id && "current-bookmark"
+                className={`bookmarkItem border border-[color:var(--text-400)] flex items-center justify-between mb-4 p-4 rounded-2xl border-solid${
+                  item.id === currentBookmark?.id &&
+                  "current-bookmark border-[color:var(--primary-600)] bg-[color:var(--text-100)] border-2 border-solid"
                 }`}
               >
                 <div>
@@ -49,7 +50,7 @@ function Bookmark() {
                     e.preventDefault(), dispatch(deleteBookmark(item.id));
                   }}
                 >
-                  <HiTrash className="trash" />
+                  <HiTrash className="trash text-[color:var(--rose-500)] w-6 h-6" />
                 </button>
               </div>
             </Link>

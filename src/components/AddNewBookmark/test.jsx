@@ -65,7 +65,11 @@ function AddNewBookmark() {
   return (
     <div>
       <h2>Add New Location to Bookmark List</h2>
-      <form action="" className="form" onSubmit={handleSubmit}>
+      <form
+        action=""
+        className="form  text-[color:var(--rose-500)] w-6 h-6"
+        onSubmit={handleSubmit}
+      >
         <div className="formControl">
           <label htmlFor="cityName">City Name: </label>
           <input

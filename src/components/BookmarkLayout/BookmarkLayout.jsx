@@ -18,10 +18,10 @@ function BookmarkLayout() {
   );
 
   return (
-    <div className="appLayout">
+    <div className="appLayout  flex flex-col md:flex-row justify-between h-[calc(100vh_-_130px)] bg-[color:var(--text-100)] items-stretch mt-4">
       {bookmarks ? (
         <>
-          <div className="sidebar">
+          <div className="sidebar w-full h-1/2 md:h-full overflow-y-scroll pr-4 md:w-6/12">
             <Outlet />
           </div>
           <Map markerLocations={bookmarks} />
