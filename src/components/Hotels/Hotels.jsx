@@ -153,7 +153,7 @@ function Hotels() {
   }, [room, destination]);
   if (!hotels) return <Loader />;
   return (
-    <div className="searchList flex flex-col gap-4 mt-[950px] md:mt-[700px] ">
+    <div className="searchList flex flex-col gap-4 h-[90%] md:h-[calc(100vh_-_130px)]">
       <h2> Search Results {hotels.length}</h2>
 
       {hotels &&

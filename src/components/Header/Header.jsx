@@ -109,7 +109,7 @@ function Header({ isAuthenticated, logout }) {
               <DateRange
                 onChange={(item) => setDate([item.selection])}
                 ranges={date}
-                className="date md:absolute fixed left-8 top-14 md:top-12 md:-left-20z-50"
+                className="date md:absolute fixed left-8 top-14 md:top-12 md:-left-20 z-50"
                 minDate={new Date()}
                 moveRangeOnFirstSelection={true}
               />
@@ -161,7 +161,7 @@ function GuestOptionList({ options, handleOptions, setOpenOptions }) {
   useOutsideClick(optionsRef, "optionDropDown", () => setOpenOptions(false));
   return (
     <div
-      className="guestOptions bg-white shadow-md shadow-white rounded-2xl p-4 border md:absolute md:top-8 fixed top-16 right-10 w-56 z-50 "
+      className="guestOptions bg-white   rounded-2xl p-4 border md:absolute md:top-8 fixed top-16 right-10 w-56 z-50 "
       ref={optionsRef}
     >
       <OptionItem
