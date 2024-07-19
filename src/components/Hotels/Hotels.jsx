@@ -170,7 +170,7 @@ function Hotels() {
             >
               <img
                 className=" w-28 h-28 object-cover rounded-2xl"
-                src={item.picture_url.url}
+                src={item.thumbnail_url}
                 alt={item.name}
               />
               <div className="searchItemDesc">
