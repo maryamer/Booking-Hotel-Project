@@ -32,7 +32,7 @@ function SingleHotel() {
     <div className="room flex justify-center items-center gap-4 max-w-screen-xl mx-auto mt-12 md:mt-4">
       {currentHotel && (
         <div className="roomDetail flex flex-col justify-center items-center ">
-          <Photo url={currentHotel.picture_url.url} alt={currentHotel.name} />
+          <Photo url={currentHotel.thumbnail_url} alt={currentHotel.name} />
           <div className="pr-[7px] w-[70%] md:w-full p-1 flex flex-col items-start justify-start text-left">
             <h2 className="mb-1 text-base text-blue-500">
               {currentHotel.country}, {currentHotel.city}
