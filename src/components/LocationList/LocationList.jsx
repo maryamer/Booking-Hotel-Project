@@ -38,7 +38,7 @@ function LocationList() {
                 className="locationItem"
                 key={item.id}
               >
-                <Photo url={item.picture_url.url} alt={item.name} />
+                <Photo url={item.thumbnail_url} alt={item.name} />
                 <div className="locationItemDesc">
                   <p className="location font-medium">{item.smart_location}</p>
                   <p className="name">{item.name}</p>
