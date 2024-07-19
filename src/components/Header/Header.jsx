@@ -73,7 +73,7 @@ function Header({ isAuthenticated, logout }) {
 
   return (
     <div className="header w-full flex justify-center  items-center mt-1 ">
-      <div className="headerSearch flex p-2 justify-center md:justify-between items-center border rounded-3xl ">
+      <div className="headerSearch flex p-2 gap-2 justify-center md:justify-between items-center border rounded-3xl ">
         <NavLink to="/bookmark">
           {" "}
           <span className="flex md:hidden">
