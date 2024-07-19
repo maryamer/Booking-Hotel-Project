@@ -44,12 +44,16 @@ function Header({ isAuthenticated, logout }) {
   const navigate = useNavigate();
   const handleOptions = (name, operation) => {
     setOptions((prev) => {
-      return {
-        ...prev,
-        [name]: operation === "inc" ? options[name]++ : options[name]--,
-      };
+      const updatedOptions = { ...prev };
+      if (operation === "inc") {
+        updatedOptions[name] = updatedOptions[name] + 1;
+      } else if (operation === "dec" && updatedOptions[name] > 0) {
+        updatedOptions[name] = updatedOptions[name] - 1;
+      }
+      return updatedOptions;
     });
   };
+
   const handleSearch = () => {
     console.log(options);
     const encodedParams = createSearchParams({
