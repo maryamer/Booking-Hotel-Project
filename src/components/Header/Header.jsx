@@ -73,7 +73,7 @@ function Header({ isAuthenticated, logout }) {
 
   return (
     <div className="header w-full flex justify-center  items-center mt-1 ">
-      <div className="headerSearch flex justify-center md:justify-between items-center border rounded-3xl ">
+      <div className="headerSearch flex p-2 justify-center md:justify-between items-center border rounded-3xl ">
         <NavLink to="/bookmark">
           {" "}
           <span className="flex md:hidden">
@@ -97,7 +97,7 @@ function Header({ isAuthenticated, logout }) {
         <div className="headerSearchItem flex relative items-center">
           <div
             id="dateDropDown"
-            className="dateDropDown flex items-center justify-center md:mx-2 text-xs "
+            className="dateDropDown flex items-center justify-center gap-2 md:mx-2 text-xs "
             onClick={() => setOpenDate((prev) => !prev)}
           >
             <HiCalendar className="headerIcon dateIcon text-green-800 md:w-5 md:h-5 w-7 h-7 md:mx-0 mx-3" />
@@ -113,7 +113,7 @@ function Header({ isAuthenticated, logout }) {
               <DateRange
                 onChange={(item) => setDate([item.selection])}
                 ranges={date}
-                className="date md:absolute fixed left-8 top-14 md:top-12 md:-left-20 z-50"
+                className="date absolute -translate-x-1/2  left-8 top-14 md:top-12 md:-left-20 z-50"
                 minDate={new Date()}
                 moveRangeOnFirstSelection={true}
               />
@@ -152,8 +152,9 @@ function Header({ isAuthenticated, logout }) {
             <HiSearch className="headerIcon w-6 h-6 md:text-white text-gray-700 inline-block" />
           </button>
         </div>
+        <User user={user} isAuthenticated={isAuthenticated} logout={logout} />
       </div>
-      <User user={user} isAuthenticated={isAuthenticated} logout={logout} />
+      {/* <User user={user} isAuthenticated={isAuthenticated} logout={logout} /> */}
     </div>
   );
 }
